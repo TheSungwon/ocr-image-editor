@@ -32,7 +32,7 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           api-level: 33
-          components: platform-tools,build-tools;33.0.2,platforms;android-33,cmdline-tools;latest
+          components: platform-tools,build-tools;33.0.2,platforms;android-33,cmdline-tools;9.0.1
 
       - name: Install dependencies
         run: npm ci
