@@ -31,16 +31,19 @@ jobs:
           java-version: "17"
 
 
+
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: ''
 
       - name: Install Android SDK packages
         run: |
-          sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+          sdkmanager --install \
+            "platform-tools" \
+            "platforms;android-33" \
+            "build-tools;33.0.2"
 
-
-      - name: Install dependencies
-        run: npm ci
 
       - name: Build Next.js
         run: npm run build
