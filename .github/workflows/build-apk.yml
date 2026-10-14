@@ -24,11 +24,13 @@ jobs:
           node-version: "22"
           cache: npm
 
+      
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: "17"
+          java-version: "21"
+
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
