@@ -30,8 +30,6 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-
-
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
@@ -44,6 +42,15 @@ jobs:
             "platforms;android-33" \
             "build-tools;33.0.2"
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify dependencies
+        run: |
+          node --version
+          npm --version
+          npm ls next
+          test -x node_modules/.bin/next
 
       - name: Build Next.js
         run: npm run build
